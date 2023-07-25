@@ -32,7 +32,7 @@ router.post(`/login`, async (req, res) => {
           Role: findUser.Role,
         };
   
-        const token = jwt.sign(payload, secretKey, { expiresIn: "1h" });
+        const token = jwt.sign(payload, secretKey, { expiresIn: "1y" });
         return res.json({ Id: findUser._id, Role: findUser.Role, token: token });
       }
       return res.send({ users });
